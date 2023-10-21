@@ -4,6 +4,7 @@ Clone repo:
 ```bash
 git clone https://github.com/slashfast/tgRPC.git
 cd tgRPC
+touch .env
 ```
 Fill in all empty environment variables in the `.env` file:
 ```bash
