@@ -17,6 +17,8 @@ WALLET_PASSWORD=
 ```
 And almost done:
 ```bash
+pip3 install poetry
+poetry install
 python3 main.py
 ```
 
