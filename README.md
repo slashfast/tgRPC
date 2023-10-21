@@ -15,10 +15,13 @@ RPC_USER=
 RPC_PASSWORD=
 WALLET_PASSWORD=
 ```
-And almost done:
+Install [Poetry](https://python-poetry.org/docs), and then install all bot dependencies:
 ```bash
 pip3 install poetry
 poetry install
+```
+Almost done:
+```bash
 python3 main.py
 ```
 
