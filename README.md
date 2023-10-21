@@ -1,6 +1,6 @@
 # tgRPC
 ## Getting started
-Clone repo:
+Clone repo and create the `.env` file:
 ```bash
 git clone https://github.com/slashfast/tgRPC.git
 cd tgRPC
