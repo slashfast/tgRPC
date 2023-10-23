@@ -1,12 +1,28 @@
-from aiogram.types import InlineKeyboardMarkup
-from aiogram.utils.keyboard import InlineKeyboardBuilder
+from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 
-def get_auto(state) -> InlineKeyboardMarkup:
-    kb = InlineKeyboardBuilder()
-    if not state['auto_transferring']['running']:
-        kb.button(text="▶️ Начать", callback_data='run_auto_transferring')
-        kb.button(text="📝 Изменить список адресов", callback_data='update_addresses')
-        kb.button(text="↔️ Изменить диапазон", callback_data='update_amount_range')
-    kb.adjust(1)
-    return kb.as_markup()
+async def menu() -> InlineKeyboardMarkup | None:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text="▶️ Начать", callback_data='start')],
+            [InlineKeyboardButton(text="📝 Добавить адреса", callback_data='update_addresses')],
+            [InlineKeyboardButton(text="🗑️ Удалить все адреса", callback_data='clear_addresses')],
+            [InlineKeyboardButton(text="↔️ Изменить диапазон", callback_data='update_amount_range')],
+        ],
+    )
+
+
+async def stop(seconds) -> InlineKeyboardMarkup | None:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text=f'⛔ Остановить ({seconds})', callback_data='stop_auto_transferring')]
+        ],
+    )
+
+
+async def cancel() -> InlineKeyboardMarkup | None:
+    return InlineKeyboardMarkup(
+        inline_keyboard=[
+            [InlineKeyboardButton(text="Отмена", callback_data="cancel")]
+        ],
+    )
