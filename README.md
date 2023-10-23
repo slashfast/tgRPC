@@ -13,9 +13,17 @@ RPC_PORT=7000
 RPC_USER=
 RPC_PASSWORD=
 WALLET_PASSWORD=
+API=https://mempool.space
+USER_ID=
+DATA_PATH=data.json
+```
+Install [Poetry](https://python-poetry.org/docs/):
+```bash
+pip3 install poetry
 ```
 And almost done:
 ```bash
+poetry install
 python3 main.py
 ```
 
