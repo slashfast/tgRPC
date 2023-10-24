@@ -109,7 +109,7 @@ async def start(callback: CallbackQuery, state: FSMContext):
             raise ValueError('Диапазон не задан!')
 
         await state.update_data(running=True)
-        # await callback.message.answer()
+        await callback.message.edit_reply_markup(reply_markup=None)
         await callback.answer('✅ Рассылка запущена!')
 
         auto_transferring_task = asyncio.create_task(
